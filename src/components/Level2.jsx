@@ -175,7 +175,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
             });
 
             const result = await response.json();
-            setUser(result)
+            setUser(result);
             console.log(result);
             if (response.status === 200) {
                 console.log("Success:", result);
@@ -323,7 +323,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
         };
 
         fetchQuestions();
-    }, []);
+    }, [user]);
 
 
 
