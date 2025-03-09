@@ -346,7 +346,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
                 </div>
             </div>}
 
-            <div className=" -z-10 fixed w-screen h-screen top-0 bg-[url('12979917_5084836.jpg')] bg-cover bg-center bg-no-repeat  ">
+            <div className=" -z-10 fixed w-screen h-screen top-0 bg-[url('/12979917_5084836.jpg')] bg-cover bg-center bg-no-repeat  ">
             </div>
             {/* <p className="h-20 backdrop-blur-sm text-transparent bg-clip-text items-center text-5xl font-bold  bg-gradient-to-br from-blue-400 via-green-300 to-purple-600 flex justify-center">Round 2: Vault of Minds</p> */}
             <div className=" min-h-dvh min-w-dvw  flex flex-col items-center backdrop-blur-xs">
