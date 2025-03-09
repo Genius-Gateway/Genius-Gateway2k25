@@ -4,7 +4,21 @@ import { useLocation } from "react-router-dom";
 import { IoBulbOutline } from "react-icons/io5";
 import { FaHandsClapping } from "react-icons/fa6";
 import {crossGrid1,crossGrid2,crossGrid3,crossGrid4,crossGrid5,questions1,questions2,questions3,questions4,questions5} from "./grid.js";
+const crossGrids = {
+  1: crossGrid1,
+  2: crossGrid2,
+  3: crossGrid3,
+  4: crossGrid4,
+  5: crossGrid5,
+};
 
+const questionSets = {
+  1: questions1,
+  2: questions2,
+  3: questions3,
+  4: questions4,
+  5: questions5,
+};
 const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
   // Questions Array
 
@@ -66,9 +80,9 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
         if(result.eliminated===true){
           navigate("/eliminated",{ state: { email:email} });
         }
-        if(result.gridNum){
-          setCrosswordGrid(eval(`crossGrid${result.gridNum}`));
-          setQuestions(eval(`questions${result.gridNum}`));
+        if (result.gridNum) {
+          setCrosswordGrid(crossGrids[result.gridNum]);
+          setQuestions(questionSets[result.gridNum]);
         }
         setUser(result);
         if (result.Level1) {
