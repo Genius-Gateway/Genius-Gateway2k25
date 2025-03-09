@@ -6,7 +6,7 @@ const Leaderboard_level1 = () => {
   // Function to fetch teams from backend
   const fetchTeams = async () => {
       try {
-          const response = await axios.get('https://genius-gateway-jos2.onrender.com/teams');
+          const response = await axios.get('https://geniusgateway2k25.onrender.com/teams');
           setTeams(response.data); // Update state with sorted teams
       } catch (error) {
           console.error('Error fetching teams:', error);
