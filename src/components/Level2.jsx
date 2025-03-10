@@ -58,7 +58,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
 
     const handleElimination = async () => {
         try {
-            const response = await fetch("https://genius-gateway-jos2.onrender.com/eliminated", { // Ensure "http://" is included
+            const response = await fetch("https://geniusgateway2k25.onrender.com/eliminated", { // Ensure "http://" is included
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
     const navigate = useNavigate();
     const handleCheckpoint = async (checkpoint) => {
         try {
-            const response = await fetch("https://genius-gateway-jos2.onrender.com/checkpoints", {
+            const response = await fetch("https://geniusgateway2k25.onrender.com/checkpoints", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -135,7 +135,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
     const level2Completed = async () => {
         try {
             // console.log(email,password)
-            const response = await fetch("https://genius-gateway-jos2.onrender.com/completion2", { // Ensure "http://" is included
+            const response = await fetch("https://geniusgateway2k25.onrender.com/completion2", { // Ensure "http://" is included
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -166,7 +166,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
 
     const handleQuestions = async () => {
         try {
-            const response = await fetch("https://genius-gateway-jos2.onrender.com/questions", {
+            const response = await fetch("https://geniusgateway2k25.onrender.com/questions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -175,7 +175,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
             });
 
             const result = await response.json();
-            setUser(result)
+            setUser(result);
             console.log(result);
             if (response.status === 200) {
                 console.log("Success:", result);
@@ -270,7 +270,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
     useEffect(() => {
         const fetchQuestions = async () => {
             try {
-                const response = await fetch("https://genius-gateway-jos2.onrender.com/access", {
+                const response = await fetch("https://geniusgateway2k25.onrender.com/access", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -323,7 +323,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
         };
 
         fetchQuestions();
-    }, []);
+    }, [user]);
 
 
 
@@ -346,7 +346,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
                 </div>
             </div>}
 
-            <div className=" -z-10 fixed w-screen h-screen top-0 bg-[url('12979917_5084836.jpg')] bg-cover bg-center bg-no-repeat  ">
+            <div className=" -z-10 fixed w-screen h-screen top-0 bg-[url('/12979917_5084836.jpg')] bg-cover bg-center bg-no-repeat  ">
             </div>
             {/* <p className="h-20 backdrop-blur-sm text-transparent bg-clip-text items-center text-5xl font-bold  bg-gradient-to-br from-blue-400 via-green-300 to-purple-600 flex justify-center">Round 2: Vault of Minds</p> */}
             <div className=" min-h-dvh min-w-dvw  flex flex-col items-center backdrop-blur-xs">
