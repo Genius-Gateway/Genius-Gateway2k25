@@ -13,7 +13,7 @@ const Login = () => {
     const handleSubmit = async () => {
         try {
             console.log(email,password)
-            const response = await fetch("http://localhost:5000/loginUser", { // Ensure "http://" is included
+            const response = await fetch("https://genius-gateway-jos2.onrender.com/loginUser", { // Ensure "http://" is included
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

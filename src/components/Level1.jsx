@@ -432,7 +432,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
 
       try {
         // console.log(email,password)
-        const response = await fetch("http://localhost:5000/access", { // Ensure "http://" is included
+        const response = await fetch("https://genius-gateway-jos2.onrender.com/access", { // Ensure "http://" is included
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -595,7 +595,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
     try {
       // console.log(email,password)
           
-          const response = await fetch("http://localhost:5000/marks", { // Ensure "http://" is included
+          const response = await fetch("https://genius-gateway-jos2.onrender.com/marks", { // Ensure "http://" is included
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -624,7 +624,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
     const level1Completed = async () => {
       try {
         // console.log(email,password)
-        const response = await fetch("http://localhost:5000/completion1", { // Ensure "http://" is included
+        const response = await fetch("https://genius-gateway-jos2.onrender.com/completion1", { // Ensure "http://" is included
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -683,7 +683,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
 
   const handleElimination = async () => {
     try{
-      const response = await fetch("http://localhost:5000/eliminated", { // Ensure "http://" is included
+      const response = await fetch("https://genius-gateway-jos2.onrender.com/eliminated", { // Ensure "http://" is included
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -761,7 +761,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
               questions[currentIndex + 1].down.hintNum += 1;
               questions[currentIndex + 1].down.hints[index].used = true; 
               
-              const response = await fetch("http://localhost:5000/decrementMarks", { // Ensure "http://" is included
+              const response = await fetch("https://genius-gateway-jos2.onrender.com/decrementMarks", { // Ensure "http://" is included
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -802,7 +802,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
           questions[currentIndex + 1].right.hintNum += 1;
           questions[currentIndex + 1].right.hints[index].used = true; 
           
-          const response = await fetch("http://localhost:5000/decrementMarks", { // Ensure "http://" is included
+          const response = await fetch("https://genius-gateway-jos2.onrender.com/decrementMarks", { // Ensure "http://" is included
             method: "POST",
             headers: {
               "Content-Type": "application/json",

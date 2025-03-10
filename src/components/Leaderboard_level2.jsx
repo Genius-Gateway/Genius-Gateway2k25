@@ -8,7 +8,7 @@ export default function Level2Leaderboard() {
     const [leaderboard, setLeaderboard] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/l2leaderboard")
+        axios.get("https://genius-gateway-jos2.onrender.com/l2leaderboard")
             .then(response => setLeaderboard(response.data))
             .catch(error => console.error("Error fetching leaderboard:", error));
     }, []);
