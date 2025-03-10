@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 import { IoBulbOutline } from "react-icons/io5";
 import { FaHandsClapping } from "react-icons/fa6";
 const crossGrid1 = [
-  [{ num: 1, direction: [{ dir: "right", len: 5, answer: "DEBUG" }, { dir: "down", len: 5, answer: "DELTA" }], filled: false }, { num: 5, direction: [{ dir: "down", len: 5, answer: "EXPEL" }], filled: false }, { filled: false }, { num: 6, direction: [{ dir: "down", len: 5, answer: "UTTER" }], filled: false }, { filled: false }],
+  [{ num: 1, direction: [{ dir: "right", len: 5, answer: "DEBUG" }, { dir: "down", len: 5, answer: "DELTA" }], filled: false }, { num: 5, direction: [{ dir: "down", len: 5, answer: "EXPEL" }], filled: false }, { num: 7, direction: [{ dir: "down", len: 3, answer: "BIO" }], filled: false }, { num: 6, direction: [{ dir: "down", len: 5, answer: "UTTER" }], filled: false }, { filled: false }],
   [{ num: 2, direction: [{ dir: "right", len: 4, answer: "EXIT" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: true }],
   [{ filled: false }, { filled: false }, { filled: true }, { filled: false }, { filled: true }],
-  [{ num: 3, direction: [{ dir: "right", len: 5, answer: "TENES" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ num: 4, direction: [{ dir: "right", len: 5, answer: "ALARM" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: false }]
+  [{ num: 3, direction: [{ dir: "right", len: 3, answer: "TEN" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: true }],
+  [{ num: 4, direction: [{ dir: "right", len: 5, answer: "ALARM" }], filled: false }, { filled: false }, { filled: false },  { filled: false }, { filled: false }]
 ];
 const crossGrid2=[
   [{ num: 1, direction: [{ dir: "right", len: 5, answer: "REACT" },{ dir: "down", len: 5, answer: "ROUTE" }], filled: false }, {filled: false }, { num: 6, direction: [{ dir: "right", len: 3, answer: "ACT" }],filled: false},{ filled: false },{filled:false}],
@@ -26,19 +26,19 @@ const crossGrid3=[
   [{num: 5, direction: [{ dir: "right", len: 5, answer: "LINUX" }],filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: false }]
 ];
 const crossGrid4 = [
-  [{ num: 1, direction: [{ dir: "right", len: 5, answer: "MOUSE" }, { dir: "down", len: 5, answer: "MERGE" }], filled: false }, { num: 5, direction: [{ dir: "down", len: 5, answer: "ENTER" }], filled: false }, { filled: false }, { num: 6, direction: [{ dir: "right", len: 3, answer: "BIN" }], filled: false }],
-  [{ num: 2, direction: [{ dir: "right", len: 4, answer: "GNOME" }], filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ num: 3, direction: [{ dir: "right", len: 5, answer: "EGNAR" }], filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ num: 4, direction: [{ dir: "down", len: 5, answer: "SIGMA" }], filled: false }, { filled: false }, { filled: false }, { filled: false }]
+  [{ num: 1, direction: [{ dir: "right", len: 5, answer: "MOUSE" }, { dir: "down", len: 5, answer: "MERGE" }], filled: false },{filled:false},{num: 4, direction: [{ dir: "down", len: 5, answer: "SIGMA" }],filled:false},{ num: 5, direction: [{ dir: "down", len: 5, answer: "ENTER" }], filled: false }],
+  [{ filled: false }, { filled: true }, { num: 6, direction: [{ dir: "right", len: 3, answer: "BIN" }], filled: false }, { filled: false },{filld:false}],
+  [{ filled: false }, { filled: true }, { filled: true }, { filled: false },{filled:false}],
+  [{ num: 3, direction: [{ dir: "right", len: 5, answer: "GNOME" }], filled: false }, { filled: false }, { filled: false }, { filled: false }],
+  [{ filled: false }, { filled: false }, { filled: false }, { filled: false },{filled:false}]
 ];
 
 const crossGrid5 = [
-  [{ num: 1, direction: [{ dir: "right", len: 4, answer: "NODE" }, { dir: "down", len: 5, answer: "NOTES" }], filled: false }, { num: 2, direction: [{ dir: "right", len: 4, answer: "TESLA" }], filled: false }, { filled: false }, { filled: false }],
-  [{ filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ num: 3, direction: [{ dir: "down", len: 5, answer: "OPERA" }], filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ num: 4, direction: [{ dir: "down", len: 5, answer: "DISKS" }], filled: false }, { filled: false }, { filled: false }, { filled: false }],
-  [{ num: 5, direction: [{ dir: "down", len: 4, answer: "TAHC" }], filled: false }, { filled: false }, { filled: false }, { filled: false }]
+  [{ num: 1, direction: [{ dir: "right", len: 5, answer: "NODES" }, { dir: "down", len: 5, answer: "NOTES" }], filled: false }, { num: 6, direction: [{ dir: "down", len: 5, answer: "OPERA" }], filled: false },{ num: 8, direction: [{ dir: "down", len: 4, answer: "DEAR" }], filled: false }, { filled: false }, { filled: false }],
+  [{ num: 2, direction: [{ dir: "right", len: 5, answer: "OPENS"}],filled: false }, { filled: false }, { filled: false }, { filled: false }],
+  [{ num: 3, direction: [{ dir: "right", len: 3, answer: "TEA" }], filled: false }, { filled: false }, { filled: false }, { filled: true },{filled:true}],
+  [{ num: 4, direction: [{ dir:"right", len: 5, answer: "ERROR" }], filled: false }, { filled: false }, { filled: false }, { num: 9, direction: [{ dir: "right", len: 2, answer: "OR" }],  filled: false },{filled:false}],
+  [{ num: 5, direction: [{ dir:"right", len: 4, answer: "SALT" }], filled: false }, { filled: false }, { filled: false }, { filled: false },{filled:true}],
 ];
 
 const questions1 = {
@@ -70,10 +70,10 @@ const questions1 = {
   },
   3: {
     right: {
-      text: "Which communication system, once widely used for sending written messages over long distances, relied on teleprinters and was commonly used by businesses before the advent of fax and email?",
-      hints: [{ text: " This system used teleprinters connected over a network to exchange text-based messages, allowing businesses to communicate across long distances before modern digital methods.", used: false },
-      { text: "It was a predecessor to fax machines and email, popular in the mid-20th century, especially for secure business communications.", used: false },
-      { text: "It’s a five-letter word starting with T, sounding like a blend of telephone and text.", used: false },], len: 5, hintNum: 0
+      text: "What is the three-letter word formed by reversing the order of the letters in TEN",
+      hints: [{ text: " Think of a common tool used in fishing that you get when you invert the sequence of letters in a number spelled out.", used: false },
+      { text: "This word, obtained by reversing TEN, describes an item often used to trap or catch fish", used: false },
+      { text: "If you invert the letters of the number often associated with a perfect score, you obtain a word that also refers to an interconnected system.", used: false },], len: 5, hintNum: 0
     }
   },
   4: {
@@ -82,7 +82,7 @@ const questions1 = {
       hints: [{ text: "In operating systems, this function schedules a signal to be sent after a certain time period, often used to implement timeouts or wake up processes.", used: false },
       { text: " It’s commonly used in Unix-like systems to interrupt sleeping programs or trigger events after a delay.", used: false },
       { text: "It’s a five-letter word starting with A, also something you set in the morning to wake up!", used: false },], len: 5, hintNum: 0
-    },
+    }
     // down: { text: "Sun rises in the?", answer: "EAST" }
   },
   5: {
@@ -93,7 +93,7 @@ const questions1 = {
       { text: "It starts with E and sounds like what happens when someone is permanently removed for breaking the rules.", used: false },],
       len: 5,
       hintNum: 0
-    },
+    }
     // down: { text: "Sun rises in the?", answer: "EAST" }
   },
   6: {
@@ -105,7 +105,17 @@ const questions1 = {
       len: 5,
       hintNum: 0
     }
-  }
+  },
+  7: {
+    down: {
+      text: "What is the three-letter abbreviation commonly used to refer to a brief biography, often found on social media profiles or author pages?",
+      hints: [{ text: "This abbreviated term is derived from the Greek word for life and serves as a concise summary of a person's history or achievements.", used: false },
+      { text: "It's a three-letter shorthand for a biography, commonly found on social media profiles and author pages.", used: false },
+      { text: " It's the short word you see at the start of someone's profile that tells you about them.", used: false },],
+      len: 5,
+      hintNum: 0
+    }
+  },
 };
 const questions2 = {
   1: {
@@ -339,58 +349,100 @@ const questions5 = {
   1: {
     right: {
       text: "What term is used to describe a point in a network, where data is sent or received, and can represent either a physical device or a logical entity in systems like graphs or trees?",
-      hints: [{ text: "In graph theory, this term represents a vertex where edges meet, and in networking, it’s a connection point for data transmission.", used: false },
-      { text: "In computer science, this term is used in data structures like linked lists, trees, and graphs to store data and links to other elements.", used: false },
-      { text: "It’s a four-letter word starting with N, commonly associated with networks and data structures.", used: false },],
-      len: 4,
+      hints: [{ text: "I'm the fundamental element in both tangible communication networks and abstract mathematical structures, often serving as an intersection point where data or connections converge.", used: false },
+      { text: "In a computer network, I could be a computer, printer, or router, and in graph theory, I'm the equivalent of a vertex that connects various edges.", used: false },
+      { text: "'m the blank in network ___, representing the point where information is sent or received.", used: false },],
+      len: 5,
       hintNum: 0
     },
     down: {
       text: "What term refers to written or recorded information, often used as a reminder or reference, and is commonly found in classrooms, meetings, or digital apps?",
-      hints: [{ text: "These are brief records of important information, often used for studying, brainstorming, or summarizing ideas.", used: false },
-      { text: "You might take these during lectures, meetings, or while reading to remember key points later.", used: false },
-      { text: "It’s a five-letter word starting with N, and many apps like Google Keep and Evernote are designed for this purpose.", used: false },],
+      hints: [{ text: "In academic and professional settings, these are often the brief, transcribed reminders or summaries of spoken information, serving as both memory aids and personalized records.", used: false },
+      { text: "During lectures, meetings, or while using productivity apps, you might quickly jot these down to capture essential details or ideas.", used: false },
+      { text: "They’re what you write on a sticky pad or in a digital app to help you remember something important.", used: false },],
       len: 5,
       hintNum: 0
     }
   },
   2: {
     right: {
-      text: "Which innovative company, named after a famous inventor, has become a leader in electric vehicles, solar energy, and space exploration?",
-      hints: [{ text: "This company, founded in 2003, revolutionized the electric vehicle market and expanded into renewable energy and battery storage.", used: false },
-      { text: "Named after a legendary inventor known for his work with electricity, the company produces cars like the Model S, Model 3, and Model Y.", used: false },
-      { text: " It’s a five-letter word starting with T, led by Elon Musk, and famous for electric cars and self-driving technology.", used: false },], len: 4, hintNum: 0
+      text: "What word describes the action of making something accessible or starting a process, such as a door, a file, or a meeting?",
+      hints: [{ text: "In computing and physical contexts alike, this term denotes the initiation of a process or the transition from being inaccessible to available, serving as a command or an action that removes a barrier.", used: false },
+      { text: "You might perform this action with a door, a computer file, or even a meeting to begin your interaction with it.", used: false },
+      { text: " It’s what you do when you unlock a door.", used: false },], len: 5, hintNum: 0
     }
   },
   3: {
-    down: {
-      text: "Which web browser, known for its speed and support for modern web standards, is also famous for being developed by a software company that shares its name with a famous music genre?",
-      hints: [{ text: "This web browser is known for its built-in VPN, ad blocker, and support for modern web technologies, offering a unique user experience.", used: false },
-      { text: "Its name is shared with a classical music genre and reflects a sense of elegance and performance.", used: false },
-      { text: " It’s a five-letter word starting with O, often linked to both a web browser and a dramatic musical art form.", used: false },], len: 5, hintNum: 0
+    right: {
+      text: "What popular beverage, originating from East Asia, is made by steeping dried leaves in hot water and is known for its various types such as black, green, and herbal?",
+      hints: [{ text: "In Eastern traditions, this infusion is celebrated for its ritualistic preparation, where the degree of oxidation of its leaves creates a spectrum from non-fermented to fully fermented varieties.", used: false },
+      { text: "This beverage is prepared by steeping dried leaves in hot water, and its common types include varieties that differ based on processing methods, like those that remain green versus those that darken.", used: false },
+      { text: " It’s the drink you might have with a biscuit, made from steeping leaves in hot water.", used: false },], len: 3, hintNum: 0
     }
   },
   4: {
-    down: {
-      text: "What devices are often used for long-term data retention, can be either volatile or non-volatile, and is found in both computers and external drives?",
-      hints: [{ text: "These storage devices can be magnetic (like HDDs) or solid-state (like SSDs) and are used for saving data even when the computer is turned off.", used: false },
-      { text: "They are circular in shape, traditionally spinning to read/write data, though modern versions have no moving parts.", used: false },
-      { text: "It’s a five-letter word starting with D, often found in computers, storing everything from operating systems to personal files.", used: false },], len: 5, hintNum: 0
-    },
+    right: {
+      text: "In computer programming, what term describes an unintended mistake in code that leads to incorrect or unexpected behavior during program execution?",
+      hints: [{ text: "This term, popularized by a famous incident involving an actual insect in a computer, now represents any unintended flaw in code that disrupts expected behavior.", used: false },
+      { text: "Programmers spend hours hunting for these issues, and the process of eliminating them is commonly known as debugging.", used: false },
+      { text: "IWhen your program isn’t working, you often say there's a ______ in the code.", used: false },], len: 5, hintNum: 0
+    }
     // down: { text: "Sun rises in the?", answer: "EAST" }
   },
   5: {
-    down: {
-      text: "What is the reverse word of term which is used for a conversation or exchange of messages, often taking place in a digital interface, where responses are instantaneous and typically used for both casual and professional communication?",
-      hints: [{ text: "This form of communication allows real-time text-based interaction, often seen in messaging apps, customer support interfaces, and online gaming.", used: false },
-      { text: "It’s commonly used in platforms like WhatsApp, Slack, and Discord for quick back-and-forth exchanges.", used: false },
-      { text: "It’s a four-letter word starting with C, describing informal or formal text conversations.", used: false },],
+    right: {
+      text: "What common mineral, composed primarily of sodium chloride, is essential for human health, enhances the flavor of food, and has been historically valuable for preserving food?",
+      hints: [{ text: "Historically so valuable that it was once used as payment—its Latin root is even linked to the word salary—this mineral is crucial for maintaining electrolyte balance in the human body.", used: false },
+      { text: "Composed primarily of sodium chloride, it's not only essential for health but also enhances flavor and was widely used in food preservation before modern refrigeration.", used: false },
+      { text: "It's what you might sprinkle on your fries to add flavor.", used: false },],
       len: 4,
       hintNum: 0
-    },
-    // down: { text: "Sun rises in the?", answer: "EAST" }
-  }
-};
+    }
+  },
+    6:{
+    down:{
+    text: "What term refers to a dramatic art form that combines singing, orchestral music, acting, and sometimes dance, typically performed in an opera house?",
+    hints:[{text:"This dramatic tradition, which originated in Italy, blends extended vocal solos, intricate ensemble pieces, and orchestral interludes to tell epic stories through music and movement.",used:false},
+      {text:"Performers in this art form convey the narrative entirely through song and acting, often enhanced by elaborate sets and costumes in grand venues.",used:false },
+{text:"It's the show you see in an opera house, featuring famous works like La Bohème and The Magic Flute." ,used:false},],
+len:5,
+hintNum:0
+    }
+  },
+    7:{
+      right:{
+        text:"What key on a computer keyboard, often labeled 'Alt', is used in combination with other keys to perform various functions, such as accessing menus or executing shortcuts?",
+        hints:[{text:"This key, abbreviated from alternate, has its origins in early computer design and, when combined with other keys, grants access to a variety of hidden system commands and extended functionalities.",used:false},
+          {text:"You might use it with keys like Tab or F4 to switch between programs or close windows, making it a vital tool for navigating your operating system efficiently.",used:false},
+          {text:"It's the key on your keyboard labeled Alt.",used:false},],
+        len:3,
+        hintNum:0
+      }
+      },
+      8:{
+        down:{
+          text:"What is the common, four-letter salutation used at the beginning of formal and affectionate letters?",
+          hints:[{text:"Historically used in epistolary traditions, this four-letter word connotes both respect and familiarity, setting the tone for the rest of a written message.",used:false},
+            {text:"You'll often see this word at the beginning of a letter, as in John or ______ Madam, indicating a polite address.",used:false},
+            {text:"It's the word you use to start a letter when you say Dear John.",used:false},],
+          len:5,
+          hintNum:0
+        }
+        },
+        9:{
+          right:{
+            text:"What is the two-letter coordinating conjunction used to indicate alternatives, as in this ___ that?",
+            hints:[{text:"In Boolean algebra, this operator appears in expressions like A ___ B, where the outcome is true if either A, B, or both are true, reflecting the principle of inclusive disjunction.",used:false},
+              {text:"This two-letter word serves as a logical connector in programming and everyday language, linking alternatives as seen in the phrase this ___ that",used:false},
+              {text:"It's the word you put between two options when you're deciding between them, like this or that.",used:false},],
+            len:2,
+            hintNum:0
+          }
+          },
+
+      };
+
+
 
 const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
   // Questions Array
@@ -1006,7 +1058,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
                 </div>
               )}
             </div>
-            <div className=" grid grid-cols-8 gap-2">
+            <div className=" grid grid-cols-9 gap-2">
               {Array.from({ length: Object.keys(questions).length }).map((_, index) => (
                 <button
                   key={index + 1}
