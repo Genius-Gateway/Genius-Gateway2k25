@@ -64,6 +64,8 @@ const validateSolution = (grid) => {
 
 const KenKen = ({ handleSubmit, qNum }) => {
   const [grid, setGrid] = useState(Array(size).fill().map(() => Array(size).fill("")));
+    const [message, setMessage] = useState('');
+  
   
   useEffect(() => {
     if (grid.flat().every(cell => cell !== "")) {
