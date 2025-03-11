@@ -22,11 +22,48 @@ const Level2Waiting = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
 //       .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 //   };
 const location = useLocation();
+const [user, setUser] = useState({});
 const navigate = useNavigate();
 const { email } = location.state || {};
 
-// const email="prem@gmail.com";
+// const email="202040257asha@gmail.com";
 
+useEffect(() => {
+  const fetchUser = async () => {
+
+    try {
+      // console.log(email,password)
+      const response = await fetch("https://geniusgateway2k25.onrender.com/access", { // Ensure "http://" is included
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        }, // Convert state to JSON string
+        body: JSON.stringify({ email: email })
+      });
+
+      const result = await response.json();
+      console.log(result);
+      setUser(result);
+      // setForceRender((prev) => prev + 1);
+
+
+      // if (response.status === 200) {
+      //   // navigate("/level1");
+
+      // } else {
+      //   setResponseMessage(result.message || "Login failed");
+      // }
+    } catch (error) {
+      console.log(error);
+      setResponseMessage(`Error: ${error.message}`);
+      navigate("/login");
+    }
+  };
+  if (!email) {
+    navigate("/login");
+  }
+  fetchUser();
+}, []);
 const getAllocatedTime = (userStartTime) => {
     // Time passed from the event start to user's start (in ms)
     const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime()+900000);
@@ -37,12 +74,12 @@ const getAllocatedTime = (userStartTime) => {
 const userStartTime = new Date();
 const [remainingTime, setRemainingTime] = useState(getAllocatedTime(userStartTime));
 useEffect(() => {
-    if (remainingTime <= 0) {
-      // When time runs out, automatically navigate to the next level.
-      // You might also call onComplete(false) if you want to mark it as incomplete.
-      navigate("/level3",{ state: { email:email} });
+    // if (remainingTime <= 0) {
+    //   // When time runs out, automatically navigate to the next level.
+    //   // You might also call onComplete(false) if you want to mark it as incomplete.
+    //   navigate("/level3",{ state: { email:email} });
 
-    }
+    // }
 
     const interval = setInterval(() => {
       setRemainingTime(prev => {
@@ -59,14 +96,14 @@ useEffect(() => {
     return () => clearInterval(interval);
   }, [remainingTime]);
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white text-center p-6">
-      <div className="bg-gray-800 p-8 rounded-2xl shadow-lg max-w-md w-full">
-        <h1 className="text-3xl font-bold mb-4">🎉 Congratulations!</h1>
-        <p className="text-lg mb-6">You have qualified for the second level.</p>
-        <div className="bg-gray-700 p-4 rounded-xl text-xl font-semibold">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 to-cyan-200 text-white text-center">
+      <div className="bg-blue-600 p-8 h-[400px]  shadow-lg w-full flex flex-col justify-center items-center">
+        <h1 className="text-7xl font-bold mb-4">Congratulations, {user.teamName}...!</h1>
+        <p className="text-xl font-bold mb-6">You have qualified for the second level in Genius Gateway.</p>
+        <div className=" p-4 rounded-xl text-xl font-semibold">
           Next level opens in:
-          <div className="text-4xl font-bold mt-2 text-green-400">
-          {Math.floor(remainingTime / 60000)}:{((remainingTime % 60000) / 1000).toFixed(0).padStart(2, '0')}
+          <div className="text-7xl font-bold mt-2 text-green-400">
+            {Math.floor(remainingTime / 60000)}:{((remainingTime % 60000) / 1000).toFixed(0).padStart(2, '0')}
           </div>
         </div>
       </div>

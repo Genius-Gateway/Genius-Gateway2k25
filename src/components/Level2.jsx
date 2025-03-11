@@ -323,7 +323,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
         };
 
         fetchQuestions();
-    }, [user]);
+    }, [presentDoor,wrongDoor]);
 
 
 
@@ -386,9 +386,9 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
                                 >
                                     <img src="gateclosed.png" alt="gate" className=" w-full h-full mx-auto object-cover" />
                                     {/* {questions[qNum].answer === true ?} */}
-                                    <div className="text-lg font-semibold text-gray-700 mb-2">
+                                    {/* <div className="text-lg font-semibold text-gray-700 mb-2">
                                         Question {qNum}
-                                    </div>
+                                    </div> */}
                                     {/* <div className="text-gray-600">
                                 {questions[qNum]}
                             </div> */}

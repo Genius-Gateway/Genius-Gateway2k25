@@ -42,10 +42,10 @@ const EventWaiting = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
 
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <h1 className="text-3xl font-bold mb-4">Genius Gateway Starts In</h1>
-                <div className="text-2xl font-mono text-gray-800">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-bl from-blue-200 border">
+            <div className="bg-white p-8 shadow-lg text-center w-full">
+                <h1 className="text-6xl font-bold mb-4 text-red-500">Genius Gateway Starts In</h1>
+                <div className="text-4xl font-thin text-gray-800">
                 {Math.floor(remainingTime / 60000)}:{((remainingTime % 60000) / 1000).toFixed(0).padStart(2, '0')}
                 </div>
             </div>
