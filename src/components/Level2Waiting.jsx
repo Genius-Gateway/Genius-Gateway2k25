@@ -74,12 +74,12 @@ const getAllocatedTime = (userStartTime) => {
 const userStartTime = new Date();
 const [remainingTime, setRemainingTime] = useState(getAllocatedTime(userStartTime));
 useEffect(() => {
-    // if (remainingTime <= 0) {
-    //   // When time runs out, automatically navigate to the next level.
-    //   // You might also call onComplete(false) if you want to mark it as incomplete.
-    //   navigate("/level3",{ state: { email:email} });
+    if (remainingTime <= 0) {
+      // When time runs out, automatically navigate to the next level.
+      // You might also call onComplete(false) if you want to mark it as incomplete.
+      navigate("/level3",{ state: { email:email} });
 
-    // }
+    }
 
     const interval = setInterval(() => {
       setRemainingTime(prev => {
