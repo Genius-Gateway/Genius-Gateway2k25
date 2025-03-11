@@ -7,6 +7,8 @@ const WinnerComponent = () => {
   const location = useLocation();
   const {email} = location.state
   const [user, setUser] = useState({});
+  const [teammate1,setTeamMate1]=useState('')
+  const [teammate2,setTeamMate2]=useState('')
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -21,6 +23,9 @@ const WinnerComponent = () => {
         const result = await response.json();
         console.log(result);
         setUser(result);
+        setTeamMate1(user.teammates[0].name)
+        setTeamMate2(user.teammates[1].name)
+
       } catch (error) {
         navigate("/login");
         console.error("Error fetching data:", error);
@@ -41,7 +46,7 @@ const WinnerComponent = () => {
           {/* <FaTrophy className="text-yellow-400 text-9xl mt-4" /> */}
           <div className='w-[25%] flex flex-col gap-3 items-center justify-center '>
             <p className='text-4xl'>Participant: 1</p>
-            <p className='font-bold text-purple-600 text-5xl text-center'>{user.teammates[0].name}</p>
+            <p className='font-bold text-purple-600 text-5xl text-center'>{teammate1}</p>
           </div>
           <div className='flex flex-col items-center w-[50%]'>
             <img src='/winner.png' className='h-52 w-52' />
@@ -53,7 +58,7 @@ const WinnerComponent = () => {
           </div>
           <div className='w-[25%] flex flex-col gap-3 items-center justify-center '>
             <p className='text-4xl'>Participant: 2</p>
-            <p className='font-bold text-blue-600 text-5xl text-center'>{user.teammates[1].name}</p>
+            <p className='font-bold text-blue-600 text-5xl text-center'>{teammate2}</p>
           </div>
         </div>
       </div>
