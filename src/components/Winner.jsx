@@ -9,6 +9,7 @@ const WinnerComponent = () => {
   const [user, setUser] = useState({});
   const [teammate1,setTeamMate1]=useState('')
   const [teammate2,setTeamMate2]=useState('')
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
@@ -23,8 +24,8 @@ const WinnerComponent = () => {
         const result = await response.json();
         console.log(result);
         setUser(result);
-        setTeamMate1(user.teammates[0].name)
-        setTeamMate2(user.teammates[1].name)
+        setTeamMate1(result.teammates[0].name)
+        setTeamMate2(result.teammates[1].name)
 
       } catch (error) {
         navigate("/login");
