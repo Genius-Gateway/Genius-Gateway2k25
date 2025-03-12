@@ -324,16 +324,16 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
       console.log(error);
     }
   }
-  const getAllocatedTime = (userStartTime) => {
-    // Time passed from the event start to user's start (in ms)
-    const delay = userStartTime.getTime() - EVENT_START_TIME.getTime();
-    const allocated = LEVEL_TIME_LIMITS[0] - delay;
-    // console.log(allocated,delay);
-    return Math.max(allocated, 0);
-  };
+  // const getAllocatedTime = (userStartTime) => {
+  //   // Time passed from the event start to user's start (in ms)
+  //   const delay = userStartTime.getTime() - EVENT_START_TIME.getTime();
+  //   const allocated = LEVEL_TIME_LIMITS[0] - delay;
+  //   // console.log(allocated,delay);
+  //   return Math.max(allocated, 0);
+  // };
   const userStartTime = new Date();
   // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [remainingTime, setRemainingTime] = useState(getAllocatedTime(userStartTime));
+  const [remainingTime, setRemainingTime] = useState(900000);
   
   useEffect(() => {
     if (remainingTime <= 0) {

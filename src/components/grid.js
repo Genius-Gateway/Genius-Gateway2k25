@@ -47,7 +47,7 @@ const questions1 = {
     down: {
       text: "In computer science and mathematics, which term is used to represent the difference or change in a variable, often appearing in equations or algorithms to calculate differences between values?",
       hints: [{ text: " In mathematics and computer science, this term symbolizes a change or difference in a variable, commonly used in algorithms, calculus, and physics equations.", used: false },
-      { text: "It's often represented by a Greek letter (∆) and is used to calculate variations in values, like in time intervals or rate of change.", used: false },
+      { text: "It's often represented by a Greek letter and is used to calculate variations in values, like in time intervals or rate of change.", used: false },
       { text: " It's a five-letter word starting with D, also the fourth letter of the Greek alphabet.", used: false },],
       len: 5,
       hintNum: 0
