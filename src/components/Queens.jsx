@@ -7,6 +7,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   const location = useLocation();
   // const navigate = useNavigate();
   const { email } = location.state || {};
+  const [message,setMessage]=useEffect("");
   // const email = "prem@gmail.com";
 
   // Check if a queen at (row, col) conflicts with others
@@ -41,7 +42,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
           navigate("/winner", { state: { email: email } });
         } else if (result.winner===false&&result.runner === true&&result.Level3===true) {
           navigate("/runner", { state: { email: email } });
-        } else if(result.Level3===true && result.winner===false){
+        } else if(result.Level3===true && result.winner===false&&result.runner===false){
           navigate("/completed", { state: { email: email } });
         }
       }
@@ -74,10 +75,11 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
 
   const isValidSolution = () => {
     if (queens.every((col, row) => !hasConflict(row, col))) {
+      setMessage("Valid Solution");
       handleSuccess();
       return true;
     }
-    return queens.every((col, row) => !hasConflict(row, col));
+    // return queens.every((col, row) => !hasConflict(row, col));
   };
   const navigate = useNavigate();
   const [user, setUser] = useState({});
@@ -200,11 +202,9 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
             >
               Reset Board
             </button>
-            {isValidSolution() && (
               <div className="px-4 py-2 bg-green-500 text-white rounded">
-                Valid Solution!
+                {message}
               </div>
-            )}
           </div>
 
           <div className="w-fit flex justify-center items-center rounded-lg">
@@ -249,6 +249,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
                           const newQueens = [...queens];
                           newQueens[row] = col;
                           setQueens(newQueens);
+                          isValidSolution();
                         }}
                       >
                         {hasQueen && (
