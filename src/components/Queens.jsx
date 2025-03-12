@@ -134,7 +134,9 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
         if (result.Level3 === true) {
           if (result.winner === true) {
             navigate("/winner", { state: { email: email } });
-          } else {
+          } else if (result.runner === true){
+            navigate("/runner", { state: { email: email } });
+          } else{
             navigate("/completed", { state: { email: email } });
           }
         }

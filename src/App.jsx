@@ -24,7 +24,8 @@ import Winner from './components/Winner.jsx'
 import Completed from './components/Completed.jsx'
 import Instructions from './components/Instructions.jsx'
 import Leaderboard_level2 from './components/Leaderboard_level2.jsx'
-const EVENT_START_TIME = new Date("2025-03-12T19:44:00");
+import Runner from './components/Runner.jsx'
+const EVENT_START_TIME = new Date("2025-03-12T23:30:00");
 const LEVEL_TIME_LIMITS = [15 * 60 * 1000, 30 * 60 * 1000, 15 * 60 * 1000];
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/eliminated" element={<Eliminated/>}/>  
         <Route path="/eventwaiting" element={<EventWaiting EVENT_START_TIME={EVENT_START_TIME} LEVEL_TIME_LIMITS={LEVEL_TIME_LIMITS}/>}/>
         <Route path="/winner" element={<Winner/>}/>
+        <Route path="/runner" element={<Runner/>}/>
         <Route path="/completed" element={<Completed/>}/>
         <Route path="/instructions" element={<Instructions/>}/>
     </Routes>
