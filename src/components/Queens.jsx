@@ -35,11 +35,15 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
         body: JSON.stringify({ email: email }),
       });
       const result = await response.json();
-      console.log(result);
-      if (result.winner === true) {
-        navigate("/winner", { state: { email: email } });
-      } else if (result.winner === false) {
-        navigate("/completed", { state: { email: email } });
+      console.log("Handle Success: "+result);
+      if (result.Level3 === true) {
+        if (result.winner === true && result.Level3===true) {
+          navigate("/winner", { state: { email: email } });
+        } else if (result.winner===false&&result.runner === true&&result.Level3===true) {
+          navigate("/runner", { state: { email: email } });
+        } else if(result.Level3===true && result.winner===false){
+          navigate("/completed", { state: { email: email } });
+        }
       }
       // if (result.success) {
       //   navigate("/completed", { state: { email: email } });
