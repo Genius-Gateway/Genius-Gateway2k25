@@ -23,7 +23,7 @@ const crossGrid4 = [
   [{ num: 1, direction: [{ dir: "right", len: 5, answer: "MOUSE" }, { dir: "down", len: 5, answer: "MERGE" }], filled: false }, { filled: false },{filled:false}, { num: 4, direction: [{ dir: "down", len: 5, answer: "SIGMA" }], filled: false }, { num: 5, direction: [{ dir: "down", len: 5, answer: "ENTER" }], filled: false }  ],
   [{ filled: false }, { filled: true }, { num: 6, direction: [{ dir: "right", len: 3, answer: "BIN" }], filled: false }, { filled: false }, { filld: false }],
   [{ filled: false }, { filled: true }, { filled: true }, { filled: false }, { filled: false }],
-  [{ num: 2, direction: [{ dir: "right", len: 5, answer: "GNOME" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: false }],
+  [{ num: 2, direction: [{ dir: "right", len: 4, answer: "GERM" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, { filled: false }],
   [{ num: 3, direction: [{ dir: "right", len: 5, answer: "EGNAR" }], filled: false }, { filled: false }, { filled: false }, { filled: false }, {filled: false }]
 ];
 const crossGrid5 = [
@@ -63,18 +63,18 @@ const questions1 = {
   },
   3: {
     right: {
-      text: "What is the three-letter word formed by reversing the order of the letters in TEN",
-      hints: [{ text: " Think of a common tool used in fishing that you get when you invert the sequence of letters in a number spelled out.", used: false },
-      { text: "This word, obtained by reversing TEN, describes an item often used to trap or catch fish", used: false },
-      { text: "If you invert the letters of the number often associated with a perfect score, you obtain a word that also refers to an interconnected system.", used: false },], len: 5, hintNum: 0
+      text: "Reverse my letters, and I become an essential tool used to capture—whether in sports, fishing, or in digital world. What number am I?",
+      hints: [{ text: " Think of a common tool used in fishing that you get when you invert the sequence of letters spelled out.", used: false },
+      { text: "When you reverse my letters, you get a term closely linked with digital connectivity and online networks.", used: false },
+      { text: "I’m a number that often marks a complete decade and is sometimes seen as a perfect score.", used: false },], len: 5, hintNum: 0
     }
   },
   4: {
     right: {
-      text: "In operating systems, I can be set to send a signal after a specified time interval, often used to interrupt sleeping processes or enforce timeouts. What am I?",
-      hints: [{ text: "In operating systems, this function schedules a signal to be sent after a certain time period, often used to implement timeouts or wake up processes.", used: false },
-      { text: " It's commonly used in Unix-like systems to interrupt sleeping programs or trigger events after a delay.", used: false },
-      { text: "It's a five-letter word starting with A, also something you set in the morning to wake up!", used: false },], len: 5, hintNum: 0
+      text: "I'm used to warn you when something's wrong and can describe a sudden feeling of fear. What word am I",
+      hints: [{ text: "I might be found in a clock, a security system, or even a state of mind when danger strikes.", used: false },
+      { text: "I not only signal the start of your day but also alert you to unexpected threats.", used: false },
+      { text: "I ring to wake you up and to warn you. What word am I?", used: false },], len: 5, hintNum: 0
     }
     // down: { text: "Sun rises in the?", answer: "EAST" }
   },
@@ -101,9 +101,9 @@ const questions1 = {
   },
   7: {
     down: {
-      text: "What is the three-letter abbreviation commonly used to refer to a brief biography, often found on social media profiles or author pages?",
-      hints: [{ text: "This abbreviated term is derived from the Greek word for life and serves as a concise summary of a person's history or achievements.", used: false },
-      { text: "It's a three-letter shorthand for a biography, commonly found on social media profiles and author pages.", used: false },
+      text: "I start the story of every living thing in science, yet I'm also the short version of your personal tale",
+      hints: [{ text: "This abbreviated term is derived from the Greek word for life and serves as a concise summary of a person's history or achievements. ", used: false },
+      { text: "It's a shorthand notation for someone details, commonly found on author pages.", used: false },
       { text: " It's the short word you see at the start of someone's profile that tells you about them.", used: false },],
       len: 5,
       hintNum: 0
@@ -131,7 +131,7 @@ const questions2 = {
   },
   2: {
     right: {
-      text: "Which term, derived from Greek, is commonly used to refer to both the branch of medicine dealing with musculoskeletal issues and a shorthand for specialists in this field?",
+      text: "When you reverse my letters I become a word derived from Greek, commonly used to refer to both the branch of medicine dealing with musculoskeletal issues and a shorthand for specialists in this field?",
       hints: [{ text: "This term comes from the Greek word meaning straight or correct.", used: false },
       { text: "It is commonly associated with treating bone, joint, and spine disorders.", used: false },
       { text: "The full term often appears in hospitals as Orthopedic Surgeon or Orthopedist.", used: false },], len: 5, hintNum: 0
@@ -147,8 +147,8 @@ const questions2 = {
   },
   4: {
     right: {
-      text: "What key on a keyboard is used to switch between different open applications or windows?",
-      hints: [{ text: "This key, when combined with Alt on Windows or Command on Mac, cycles through open applications.", used: false },
+      text: "I am key used to move between different open windows",
+      hints: [{ text: "This key, realted to computers cycles through open applications.", used: false },
       { text: "It's also used for indentation in text editors and moving between form fields in web browsers.", used: false },
       { text: "The key's name has three letters and sounds like a short form of tablet.", used: false },], len: 3, hintNum: 0
     },
@@ -170,7 +170,7 @@ const questions2 = {
       text: "What word refers to the process of doing something intentionally or taking action in response to a situation?",
       hints: [{ text: "This word can describe a formal law passed by a government or a conscious decision to do something.", used: false },
       { text: "It's often used to describe what performers do on stage or what a person does when responding to an event.", used: false },
-      { text: "It's a three-letter word that starts with A   and means to take action", used: false },],
+      { text: "It's a three-letter word that starts with A and means to take action", used: false },],
       len: 3,
       hintNum: 0
     }
@@ -199,7 +199,7 @@ const questions2 = {
 const questions3 = {
   1: {
     right: {
-      text: "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?",
+      text: "I speak without a mouth and hear without ears. I have no body, but I come alive in the air. What am I?",
       hints: [{ text: "This device transmits voices over long distances without physical presence.", used: false },
       { text: "It can hear through a microphone and speak through a speaker, often used for communication.", used: false },
       { text: "It's a five-letter word, starting with P, and you probably carry it in your pocket every day.", used: false },],
@@ -217,7 +217,7 @@ const questions3 = {
   },
   2: {
     right: {
-      text: "What is the term for a visual representation of something, often created digitally or captured by a camera?",
+      text: "What is the term for a visual representation of something, often created digitally?",
       hints: [{ text: "This can be a digital rendering, a photograph, or a scanned picture, often made up of pixels.", used: false },
       { text: "It is something you might edit using software like Photoshop or view in a gallery app.", used: false },
       { text: "It's a five-letter word starting with I and ending with E, often used to describe pictures or graphics.", used: false },], len: 5, hintNum: 0
@@ -266,7 +266,7 @@ const questions3 = {
       text: "What term is used to describe the process of executing a program or script, often initiated by a user or an automated system?",
       hints: [{ text: "This term refers to the process of starting a program or script, allowing the computer to execute its instructions step by step.", used: false },
       { text: "In many programming environments, pressing a play button or typing a command initiates this process, starting the code execution.", used: false },
-      { text: "It's a three-letter word starting with R, often used when you  a program to make it work.", used: false },],
+      { text: "It's a three-letter word starting with R, often used in execution of a program to make it work.", used: false },],
       len: 3,
       hintNum: 0
     }
@@ -285,7 +285,7 @@ const questions4 = {
     down: {
       text: "What term is used in programming or version control systems to combine changes from different sources into a single, unified version?",
       hints: [{ text: "This operation is crucial in version control systems like Git, often requiring conflict resolution when combining code changes.", used: false },
-      { text: "It integrates changes from different branches into a unified branch, ensuring all updates coexist in the codebase.", used: false },
+      { text: "I am an example of popular sorting algorithm", used: false },
       { text: " It's a five-letter word starting with M that means to combine or join things together.", used: false },],
       len: 5,
       hintNum: 0
@@ -293,15 +293,15 @@ const questions4 = {
   },
   2: {
     right: {
-      text: "What is the name of the popular open-source desktop environment used in Linux, known for its user-friendly interface and customization options?",
-      hints: [{ text: "This desktop environment follows the GTK toolkit and focuses on simplicity, accessibility, and modern design principles.", used: false },
-      { text: "It's the default desktop environment for many Linux distributions, including Fedora and Ubuntu (in certain editions).", used: false },
-      { text: " Its name is a five-letter word starting with G, sharing its name with a mythical creature often depicted as a small humanoid figure.", used: false },], len: 4, hintNum: 0
+      text: "I’m unseen by the naked eye but can start a widespread outbreak—or spark the beginning of something new. What word am I?",
+      hints: [{ text: "I’m often blamed for causing diseases, ", used: false },
+      { text: "In science, I refer to a tiny microorganism; in everyday language, I can mean the initial spark of creativity or change.", used: false },
+      { text: "Think about what you might wash off your hands to avoid getting sick", used: false },], len: 4, hintNum: 0
     }
   },
   3: {
     right: {
-      text: "What is the reverse word of term which is used to describe the difference between the highest and lowest values in a dataset or a set of numbers?",
+      text: "(Reverse the  word)What is the reverse word of term which is used to describe the difference between the highest and lowest values in a dataset or a set of numbers?",
       hints: [{ text: " In statistics, this term represents a measure of dispersion, calculated by subtracting the smallest value from the largest value in a dataset.", used: false },
       { text: "It shows how spread out numbers are, helping to understand the variability within a set of data points.", used: false },
       { text: " It's a five-letter word starting with R, often used to describe the span or extent between two points.", used: false },], len: 5, hintNum: 0
