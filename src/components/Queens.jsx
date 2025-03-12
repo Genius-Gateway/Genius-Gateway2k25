@@ -79,8 +79,8 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   const [user, setUser] = useState({});
   const getAllocatedTime = (userStartTime) => {
     // Time passed from the event start to user's start (in ms)
-    const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime() + 1800000);
-    const allocated = LEVEL_TIME_LIMITS[1] - delay;
+    const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime() + LEVEL_TIME_LIMITS[0]+LEVEL_TIME_LIMITS[1]);
+    const allocated = LEVEL_TIME_LIMITS[2] - delay;
     // console.log(allocated,delay);
     return Math.max(allocated, 0);
   };

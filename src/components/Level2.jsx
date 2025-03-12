@@ -75,7 +75,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
 
     const getAllocatedTime = (userStartTime) => {
         // Time passed from the event start to user's start (in ms)
-        const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime() + 900000);
+        const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime() + LEVEL_TIME_LIMITS[0]);
         const allocated = LEVEL_TIME_LIMITS[1] - delay;
         // console.log(allocated,delay);
         return Math.max(allocated, 0);
