@@ -7,7 +7,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   const location = useLocation();
   // const navigate = useNavigate();
   const { email } = location.state || {};
-  const [message,setMessage]=useEffect("");
+  const [message,setMessage]=useState(null);
   // const email = "prem@gmail.com";
 
   // Check if a queen at (row, col) conflicts with others
@@ -202,9 +202,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
             >
               Reset Board
             </button>
-              <div className="px-4 py-2 bg-green-500 text-white rounded">
-                {message}
-              </div>
+            {message && <div className="px-4 py-2 bg-green-500 text-white rounded">{message}</div>}
           </div>
 
           <div className="w-fit flex justify-center items-center rounded-lg">
