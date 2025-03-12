@@ -9,6 +9,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   const { email } = location.state || {};
   const [message,setMessage]=useState(null);
   const [completed,setCompleted]=useState(false);
+  const [access,setAccess]=useState(false);
   // const email = "prem@gmail.com";
 
   // Check if a queen at (row, col) conflicts with others
@@ -37,16 +38,18 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
         body: JSON.stringify({ email: email }),
       });
       const result = await response.json();
-      console.log("Handle Success: "+result);
-      if (result.Level3 === true) {
-        if (result.winner === true && result.Level3===true) {
-          navigate("/winner", { state: { email: email } });
-        } else if (result.winner===false&&result.runner === true&&result.Level3===true) {
-          navigate("/runner", { state: { email: email } });
-        } else if(result.Level3===true && result.winner===false&&result.runner===false){
-          navigate("/completed", { state: { email: email } });
-        }
-      }
+      setAccess(true);
+
+      // console.log("Handle Success: "+result);
+      // if (result.Level3 === true) {
+      //   if (result.winner === true && result.Level3===true) {
+      //     navigate("/winner", { state: { email: email } });
+      //   } else if (result.winner===false&&result.runner === true&&result.Level3===true) {
+      //     navigate("/runner", { state: { email: email } });
+      //   } else if(result.Level3===true && result.winner===false&&result.runner===false){
+      //     navigate("/completed", { state: { email: email } });
+      //   }
+      // }
       // if (result.success) {
       //   navigate("/completed", { state: { email: email } });
       // } else {
@@ -155,7 +158,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
     };
 
     fetchUserDetails();
-  }, []);
+  }, [access]);
 
 
   return (
