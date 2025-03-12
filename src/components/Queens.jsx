@@ -8,6 +8,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   // const navigate = useNavigate();
   const { email } = location.state || {};
   const [message,setMessage]=useState(null);
+  const [completed,setCompleted]=useState(false);
   // const email = "prem@gmail.com";
 
   // Check if a queen at (row, col) conflicts with others
@@ -74,12 +75,13 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   }
 
   const isValidSolution = () => {
-    if (queens.every((col, row) => !hasConflict(row, col))) {
+    if (queens.every((col, row) => !hasConflict(row, col))&&completed===false) {
       setMessage("Valid Solution");
+      setCompleted(true);
       handleSuccess();
       return true;
     }
-    // return queens.every((col, row) => !hasConflict(row, col));
+    return queens.every((col, row) => !hasConflict(row, col));
   };
   const navigate = useNavigate();
   const [user, setUser] = useState({});
@@ -202,7 +204,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
             >
               Reset Board
             </button>
-            {message && <div className="px-4 py-2 bg-green-500 text-white rounded">{message}</div>}
+            {isValidSolution() && completed&& <p className="text-green-500 font-semibold">{message}</p>}
           </div>
 
           <div className="w-fit flex justify-center items-center rounded-lg">
@@ -247,7 +249,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
                           const newQueens = [...queens];
                           newQueens[row] = col;
                           setQueens(newQueens);
-                          isValidSolution();
+                          
                         }}
                       >
                         {hasQueen && (
