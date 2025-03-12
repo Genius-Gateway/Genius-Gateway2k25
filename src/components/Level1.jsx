@@ -68,7 +68,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
         });
 
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
 
         if (result.level3 === true) {
           if (result.winner === true) {
@@ -230,7 +230,7 @@ const Level1 = ({EVENT_START_TIME,LEVEL_TIME_LIMITS}) => {
             body: JSON.stringify({ email: email })
           });
           const result = await response.json();
-          console.log(result);
+          // console.log(result);
           setForceRender((prev) => prev + 1); 
   }
       // if (response.status === 200) {

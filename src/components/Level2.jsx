@@ -121,7 +121,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
             });
 
             const result = await response.json();
-            console.log(result);
+            // console.log(result);
             if (response.status === 200) {
                 console.log("Checkpoint Success:", result);
                 currentSection = currentSection + 1;
@@ -279,7 +279,7 @@ const Level2 = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
                 });
 
                 const result = await response.json();
-                console.log(result);
+                // console.log(result);
                 setUser(result);
                 let Unum = result.UniqueNumber;
                 const Ukey = Unum.split("").map(Number);

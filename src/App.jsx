@@ -25,7 +25,8 @@ import Completed from './components/Completed.jsx'
 import Instructions from './components/Instructions.jsx'
 import Leaderboard_level2 from './components/Leaderboard_level2.jsx'
 import Runner from './components/Runner.jsx'
-const EVENT_START_TIME = new Date("2025-03-13T01:20:00");
+import FinalLeaderboard from "./components/FinalLeaderboard.jsx"
+const EVENT_START_TIME = new Date("2025-03-13T12:00:00");
 const LEVEL_TIME_LIMITS = [15 * 60 * 1000, 30 * 60 * 1000, 15 * 60 * 1000];
 
 const App = () => {
@@ -37,8 +38,7 @@ const App = () => {
         <Route path="/level2" element={<Level2 EVENT_START_TIME={EVENT_START_TIME} LEVEL_TIME_LIMITS={LEVEL_TIME_LIMITS}/>} />
         <Route path="/checkpoints" element={<Checkpoints />} />
         <Route path="/leaderboard" element={<Leaderboard_level2 />} />
-        {/* <Route path="/finalleaderboard" element={<Leaderboard_level2 />} /> */}
-        {/* <Route path="/complete" element={<Leaderboard_level2 />} /> */}
+        <Route path="/finalleaderboard" element={<FinalLeaderboard />} />
         <Route path="/magicSquare" element={<MagicSquare />} />
         <Route path="/towersofhanoi" element={<TowersOfHanoi   />} />
         <Route path="/" element={<Welcome />} />
