@@ -36,10 +36,10 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
       });
       const result = await response.json();
       console.log(result);
-      if(result.winner===true){
+      if (result.winner === true) {
         navigate("/winner", { state: { email: email } });
-      }else if(result.winner===false){
-        navigate("/completed",{state:{email:email}});
+      } else if (result.winner === false) {
+        navigate("/completed", { state: { email: email } });
       }
       // if (result.success) {
       //   navigate("/completed", { state: { email: email } });
@@ -53,20 +53,20 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   }
   const handleElimination = async () => {
     try {
-        const response = await fetch("https://geniusgateway2k25.onrender.com/eliminated", { // Ensure "http://" is included
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            }, // Convert state to JSON string
-            body: JSON.stringify({ email: email })
-        });
-        const result = await response.json();
-        console.log(result);
-        navigate("/eliminated", { state: { email: email } });
+      const response = await fetch("https://geniusgateway2k25.onrender.com/eliminated", { // Ensure "http://" is included
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        }, // Convert state to JSON string
+        body: JSON.stringify({ email: email })
+      });
+      const result = await response.json();
+      console.log(result);
+      navigate("/eliminated", { state: { email: email } });
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-}
+  }
 
   const isValidSolution = () => {
     if (queens.every((col, row) => !hasConflict(row, col))) {
@@ -79,7 +79,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
   const [user, setUser] = useState({});
   const getAllocatedTime = (userStartTime) => {
     // Time passed from the event start to user's start (in ms)
-    const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime() + LEVEL_TIME_LIMITS[0]+LEVEL_TIME_LIMITS[1]);
+    const delay = userStartTime.getTime() - (EVENT_START_TIME.getTime() + LEVEL_TIME_LIMITS[0] + LEVEL_TIME_LIMITS[1]);
     const allocated = LEVEL_TIME_LIMITS[2] - delay;
     // console.log(allocated,delay);
     return Math.max(allocated, 0);
@@ -91,11 +91,11 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
       // When time runs out, automatically navigate to the next level.
       // You might also call onComplete(false) if you want to mark it as incomplete.
       // navigate("/level3",{ state: { email:email} });
-      if (user && user.Level1 === true && user.Level2 === true &&user.Level3 === false) {
+      if (user && user.Level1 === true && user.Level2 === true && user.Level3 === false) {
         handleElimination();
-    } else if (user.Level3 === true) {
+      } else if (user.Level3 === true) {
         navigate("/completed", { state: { email: email } });
-    }
+      }
 
     }
 
@@ -112,7 +112,7 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [remainingTime,user]);
+  }, [remainingTime, user]);
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -132,11 +132,11 @@ const Queens = ({ EVENT_START_TIME, LEVEL_TIME_LIMITS }) => {
           navigate("/eliminated");
         }
         if (result.Level3 === true) {
-          if (result.winner === true) {
+          if (result.winner === true && result.Level3===true) {
             navigate("/winner", { state: { email: email } });
-          } else if (result.runner === true){
+          } else if (result.winner===false&&result.runner === true&&result.Level3===true) {
             navigate("/runner", { state: { email: email } });
-          } else{
+          } else if(result.Level3===true && result.winner===false){
             navigate("/completed", { state: { email: email } });
           }
         }
