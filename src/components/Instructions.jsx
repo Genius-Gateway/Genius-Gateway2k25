@@ -18,9 +18,9 @@ const Instructions = () => {
           <p className="text-xl font-thin">4. If you are using your personal laptop for the event you are responsible for any technical or network issues</p>
           <p className="text-xl font-thin">5. Extra time will not be provided at any cost for any individual for their delayed participation</p>
         </div>
-        <div className="flex justify-evenly ">
+        <div className="md:flex-row flex flex-col gap-5 justify-evenly ">
 
-          <div className="rounded-xl shadow-md border border-gray-200 bg-gray-100 p-5 flex flex-col w-[32%] pr-10 ">
+          <div className="rounded-xl shadow-md border border-gray-200 bg-gray-100 p-5 flex flex-col md:w-[32%] pr-10 ">
             <p className="font-bold text-3xl text-pink-400 mb-3">Level 1: Enigma of Minds</p>
             <p className="text-xl font-thin">1. This level lasts for about 15 minutes</p>
             <p className="text-xl font-thin">2. You will be given a crossword grid marking the questions for the respective cells in the grid</p>
@@ -30,19 +30,15 @@ const Instructions = () => {
             <p className="text-xl font-thin">6. For third hint: 15 marks will be deducted</p>
             <p className="text-xl font-thin">7. For every correctly answered questions 50 marks will be credited.</p>
             <p></p>
-
-
-
-
           </div>
-          <div className="rounded-xl shadow-md border border-gray-200 bg-gray-100 p-5 flex flex-col w-[32%] pr-10 ">
+          <div className="rounded-xl shadow-md border border-gray-200 bg-gray-100 p-5 flex flex-col md:w-[32%] pr-10 ">
             <p className="font-bold text-3xl text-blue-400 mb-3">Level 2: Vault of Minds</p>
             <p className="text-xl font-thin">1. This level lasts for about 30 minutes</p>
             <p className="text-xl font-thin">2. There will be three checkpoints where each checkpoint consists of three doors where only one door will lead you to the next checkpoint.</p>
             <p className="text-xl font-thin">3. For every puzzle answered inside a door you will be credited with 50 points.</p>
             <p className="text-xl font-thin">4. The one who will pass through all the checkpoints in the given time will be qualified for the next level. </p>
           </div>
-          <div className="rounded-xl shadow-md border border-gray-200 bg-gray-100 p-5 flex flex-col w-[32%] pr-10 ">
+          <div className="rounded-xl shadow-md border border-gray-200 bg-gray-100 p-5 flex flex-col md:w-[32%] pr-10 ">
             <p className="font-bold text-3xl text-yellow-400 mb-3">Level 3: Queen of Minds</p>
             <p className="text-xl font-thin">1. You will be given a single puzzle in this round</p>
             <p className="text-xl font-thin">2. This level lasts for about 15 minutes</p>
@@ -51,20 +47,20 @@ const Instructions = () => {
 
           </div>
         </div>
-        <div className="mb-3 p-10 mx-4 shadow-md  bg-gray-100  rounded-xl">
-          <p className="text-6xl text-purple-400 font-bold flex justify-center mb-5">Event Coordinators</p>
-          <div className=" h-[500px] flex justify-around ">
+        <div className="mb-3 p-10 md:mx-4 shadow-md  bg-gray-100  rounded-xl">
+          <p className="text-3xl text-center md:text-6xl text-purple-400 font-bold flex justify-center mb-5">Event Coordinators</p>
+          <div className="flex flex-col gap-5 md:h-[500px] md:flex-row justify-around ">
             <div className="relative flex justify-center ">
               <img className="object-cover rounded-xl w-[320px]" src="asha.jpg"></img>
-              <div className="flex items-center justify-center bottom-0 absolute h-28 bg-gradient-to-t rounded-b-xl from-gray-900 w-full"><p className="text-3xl font-bold text-white">M. Asha Deepthi</p></div>
+              <div className="flex items-center justify-center bottom-0 absolute h-28 bg-gradient-to-t rounded-b-xl from-gray-900 w-full"><p className="text-2xl md:text-3xl font-bold text-white">M. Asha Deepthi</p></div>
             </div>
             <div className="relative flex justify-center ">
               <img className="object-cover rounded-xl w-[320px]" src="prem.jpg"></img>
-              <div className="flex items-center justify-center bottom-0 absolute h-28 bg-gradient-to-t rounded-b-xl from-gray-900 w-full"><p className="text-3xl font-bold text-white">J. Prem Sagar</p></div>
+              <div className="flex items-center justify-center bottom-0 absolute h-28 bg-gradient-to-t rounded-b-xl from-gray-900 w-full"><p className="text-2xl md:text-3xl  font-bold text-white">J. Prem Sagar</p></div>
             </div>
             <div className="relative flex justify-center ">
               <img className="object-cover rounded-xl w-[320px]" src="Swarupa2.jpg"></img>
-              <div className="flex items-center justify-center bottom-0 absolute h-28 bg-gradient-to-t rounded-b-xl from-gray-900 w-full"><p className="text-3xl font-bold text-white">S. Mohana Swarupa</p></div>
+              <div className="flex items-center justify-center bottom-0 absolute h-28 bg-gradient-to-t rounded-b-xl from-gray-900 w-full"><p className="text-2xl md:text-3xl  font-bold text-white">S. Mohana Swarupa</p></div>
             </div>
           </div>
 

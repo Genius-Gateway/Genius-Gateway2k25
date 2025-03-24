@@ -26,7 +26,7 @@ import Instructions from './components/Instructions.jsx'
 import Leaderboard_level2 from './components/Leaderboard_level2.jsx'
 import Runner from './components/Runner.jsx'
 import FinalLeaderboard from "./components/FinalLeaderboard.jsx"
-const EVENT_START_TIME = new Date("2025-03-13T12:00:00");
+const EVENT_START_TIME = new Date("2025-03-24T11:20:00");
 const LEVEL_TIME_LIMITS = [15 * 60 * 1000, 45 * 60 * 1000, 15 * 60 * 1000];
 
 const App = () => {
